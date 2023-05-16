@@ -1,9 +1,10 @@
 import "./App.css";
+import Singup from "./components/Signup/Singup";
 
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
+      <Singup />
     </div>
   );
 }
