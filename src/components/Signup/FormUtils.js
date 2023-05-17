@@ -17,9 +17,4 @@ export const validationSchema = Yup.object().shape({
     confirmPassword:Yup.string().oneOf([Yup.ref('password'),null],'Password must match').required('Confirm Password is required'),
 })
 
-export const submitHandler = (values)=>{
-    console.log(values)
-}
-
-
 // REGEX="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/";
