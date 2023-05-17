@@ -34,21 +34,24 @@ function Singup() {
         >
           {({ values, setFieldValue }) => (
             <Form className={style["signup-form"]}>
-              <label
-                htmlFor="profilePhoto"
-                className={style["upload-photo-label"]}
-              >
-                <div className={style["preview-wrapper"]}>
-                  <span>
-                    {values.profilePhoto ? values.profilePhoto.name : `Photo+`}
-                  </span>
-                  <img
-                    src={previewImage || noUser}
-                    alt=""
-                    style={{ width: "50px", borderRadius: "50%" }}
-                  />
-                </div>
-
+              <div className={style["form-control"]}>
+                <label
+                  htmlFor="profilePhoto"
+                  className={style["upload-photo-label"]}
+                >
+                  <div className={style["preview-wrapper"]}>
+                    <span>
+                      {values.profilePhoto
+                        ? values.profilePhoto.name
+                        : `Photo+`}
+                    </span>
+                    <img
+                      src={previewImage || noUser}
+                      alt=""
+                      style={{ width: "50px", borderRadius: "50%" }}
+                    />
+                  </div>
+                </label>
                 <Field
                   id="profilePhoto"
                   name="profilePhoto"
@@ -60,7 +63,13 @@ function Singup() {
                   type="file"
                   hidden
                 />
-              </label>
+                <ErrorMessage
+                  name="profilePhoto"
+                  component="p"
+                  className={style["error-message"]}
+                />
+              </div>
+
               <div className={style["form-control"]}>
                 <label htmlFor="name">Name</label>
                 <Field id="name" name="name" />
