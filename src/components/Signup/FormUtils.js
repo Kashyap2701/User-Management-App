@@ -2,8 +2,9 @@ import * as Yup from "yup";
 
 export const initialValues = {
     name:'',
+    profilePhoto:null,
     email:'',
-    phoneNo:'',
+    phoneNo:'9428551650',
     password:'',
     confirmPassword:''
 }

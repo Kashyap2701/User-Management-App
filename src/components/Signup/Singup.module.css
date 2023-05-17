@@ -51,3 +51,13 @@
   font-weight: bold;
   border-radius: 3px;
 }
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-wrapper img {
+  margin: 0px 10px;
+}
