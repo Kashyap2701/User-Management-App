@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./Home.module.css";
 import profilePhoto from "../../assets/profile-photo.jpg";
-
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
       <header className={style.navbar}>
         <h2>User Management App</h2>
-        <a href="">Logout</a>
+        <Link to="/signup">Logout</Link>
       </header>
       <div className={style.container}>
         <div className={style.imageWrapper}>

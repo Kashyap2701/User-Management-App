@@ -3,10 +3,17 @@ import style from "./Singup.module.css";
 import noUser from "../../assets/no-profile.png";
 import signupImage from "../../assets/signup.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { initialValues, validationSchema, submitHandler } from "./FormUtils.js";
+import { initialValues, validationSchema } from "./FormUtils.js";
+import { useNavigate } from "react-router-dom";
 
 function Singup() {
   const [previewImage, setPreviewImage] = useState();
+  const navigate = useNavigate();
+
+  const submitHandler = (values) => {
+    console.log(values);
+    navigate("/");
+  };
 
   const handlePreviewImage = (e) => {
     let reader = new FileReader();
