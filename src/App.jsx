@@ -5,7 +5,7 @@ import Singup from "./components/Signup/Singup";
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Singup />
     </div>
   );
 }
