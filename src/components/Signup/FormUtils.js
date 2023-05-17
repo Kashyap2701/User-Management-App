@@ -25,7 +25,7 @@ export const validationSchema = Yup.object().shape({
         if (!value) {
             return true // No file selected, validation passes
         }
-        return value.size<=2*1024; // 2MB
+        return value.size<=2*1024*1024; // 2MB
       }).required('Profile photo is required')
 })
 
