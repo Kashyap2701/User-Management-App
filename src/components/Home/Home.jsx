@@ -1,27 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Home.module.css";
 import profilePhoto from "../../assets/profile-photo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userAuthActions } from "../../store/userAuthSlice";
 function Home() {
+  const isLoggedin = useSelector((state) => state.user.isLoggedIn);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedin) {
+      navigate("/signup");
+    }
+  }, []);
+
+  const user = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(userAuthActions.logout());
+  };
+
   return (
     <>
       <header className={style.navbar}>
         <h2>User Management App</h2>
-        <Link to="/signup">Logout</Link>
+        <Link to="/signup" onClick={logoutHandler}>
+          Logout
+        </Link>
       </header>
       <div className={style.container}>
         <div className={style.imageWrapper}>
           <img
             className={style.profilePhoto}
-            src={profilePhoto}
+            src={user.profilePhoto}
             alt="profile-photo"
           />
         </div>
         <div className={style.profileInfo}>
           <p>
-            Hello <span>Kashyap</span>, you are registered with the email id
-            <span> kspatel100@gmail.com</span> and phone number
-            <span> 9428551650</span>
+            Hello <span>{user.name}</span>, you are registered with the email id
+            <span> {user.email}</span> and phone number
+            <span> {user.phoneNo}</span>
           </p>
         </div>
       </div>
