@@ -10,7 +10,6 @@ import { userAuthActions } from "../../store/userAuthSlice";
 
 function Singup() {
   const [previewImage, setPreviewImage] = useState();
-  // const [base64String,setBase64String] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

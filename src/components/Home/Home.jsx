@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import style from "./Home.module.css";
 import profilePhoto from "../../assets/profile-photo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userAuthActions } from "../../store/userAuthSlice";
 function Home() {
+  const isLoggedin = useSelector((state) => state.user.isLoggedIn);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedin) {
+      navigate("/signup");
+    }
+  }, []);
+
   const user = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
-    console.log("adas");
     dispatch(userAuthActions.logout());
   };
 
