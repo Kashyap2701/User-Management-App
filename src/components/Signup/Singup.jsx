@@ -5,14 +5,19 @@ import signupImage from "../../assets/signup.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { initialValues, validationSchema } from "./FormUtils.js";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userAuthActions } from "../../store/userAuthSlice";
 
 function Singup() {
   const [previewImage, setPreviewImage] = useState();
+  // const [base64String,setBase64String] = useState();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const submitHandler = (values) => {
     console.log(values);
-    navigate("/");
+    dispatch(userAuthActions.signup({ ...values, profilePhoto: previewImage }));
+    navigate("/home");
   };
 
   const handlePreviewImage = (e) => {
