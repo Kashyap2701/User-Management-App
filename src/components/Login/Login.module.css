@@ -1,0 +1,28 @@
+.container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  min-width: 400px;
+  padding: 20px;
+}
+
+.login-form-wrapper {
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.error-message {
+  right: 0;
+  color: red;
+  position: absolute;
+  bottom: 0;
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.btn-login {
+  background-color: rgb(82, 82, 232);
+}

@@ -6,28 +6,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { userAuthActions } from "../../store/userAuthSlice";
 function Home() {
   const isLoggedin = useSelector((state) => state.user.isLoggedIn);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLoggedin) {
-      navigate("/signup");
-    }
-  }, []);
-
   const user = useSelector((state) => state.user.currentUser);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
     dispatch(userAuthActions.logout());
+    navigate("/login");
   };
 
   return (
     <>
       <header className={style.navbar}>
         <h2>User Management App</h2>
-        <Link to="/signup" onClick={logoutHandler}>
+        <p
+          style={{ fontWeight: "bold", fontSize: "larger", cursor: "pointer" }}
+          onClick={logoutHandler}
+        >
           Logout
-        </Link>
+        </p>
+        {/* <Link to="/login">Logout</Link> */}
       </header>
       <div className={style.container}>
         <div className={style.imageWrapper}>
