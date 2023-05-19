@@ -62,3 +62,11 @@
 .preview-wrapper img {
   margin: 0px 10px;
 }
+
+.signup-footer {
+  margin: 10px 0px;
+  text-align: center;
+}
+.signup-footer a {
+  color: rgb(82, 82, 232);
+}

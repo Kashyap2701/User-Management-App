@@ -3,8 +3,8 @@ import style from "./Singup.module.css";
 import noUser from "../../assets/no-profile.png";
 import signupImage from "../../assets/signup.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { initialValues, validationSchema } from "./FormUtils.js";
-import { useNavigate } from "react-router-dom";
+import { initialValues, validationSchema } from "./SignupFormUtils.js";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userAuthActions } from "../../store/userAuthSlice";
 import Toster from "../Toaster/Toster";
@@ -148,6 +148,9 @@ function Singup() {
               </Form>
             )}
           </Formik>
+          <p className={style["signup-footer"]}>
+            Already Have Account <Link to="/login">Click Here</Link>
+          </p>
         </div>
         <div className={style["signup-form-image-wrapper"]}>
           <img src={signupImage} alt="" />

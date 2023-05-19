@@ -17,16 +17,6 @@ function Home() {
 
   return (
     <>
-      <header className={style.navbar}>
-        <h2>User Management App</h2>
-        <p
-          style={{ fontWeight: "bold", fontSize: "larger", cursor: "pointer" }}
-          onClick={logoutHandler}
-        >
-          Logout
-        </p>
-        {/* <Link to="/login">Logout</Link> */}
-      </header>
       <div className={style.container}>
         <div className={style.imageWrapper}>
           <img
