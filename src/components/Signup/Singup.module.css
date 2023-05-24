@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 900px;
+  min-height: 600px;
+  padding: 20px;
+}
+
+.signup-form-wrapper {
+  flex: 1;
+}
+
+.signup-form-image-wrapper {
+  flex: 1.3;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-photo-label {
+  text-align: center;
+  cursor: pointer;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.btn-wrapper {
+  display: flex;
+}
+
+.btn-submit {
+  background-color: rgb(68, 68, 236);
+}
+
+.btn-reset {
+  background-color: rgb(222, 66, 66);
+}
+
+.error-message {
+  right: 0;
+  color: red;
+  position: absolute;
+  bottom: 0;
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.preview-wrapper img {
+  margin: 0px 10px;
+}
+
+.signup-footer {
+  margin: 10px 0px;
+  text-align: center;
+}
+.signup-footer a {
+  color: rgb(82, 82, 232);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .signup-form-image-wrapper {
+    display: none;
+  }
+}
