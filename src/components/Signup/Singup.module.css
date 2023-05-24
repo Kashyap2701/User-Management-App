@@ -70,3 +70,12 @@
 .signup-footer a {
   color: rgb(82, 82, 232);
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .signup-form-image-wrapper {
+    display: none;
+  }
+}

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userAuthActions } from "../../store/userAuthSlice";
 import { Link, useNavigate } from "react-router-dom";
 import Toster from "../Toaster/Toster";
+import Navbar from "../Navbar/Navbar";
 
 function Login() {
   const dispatch = useDispatch();
@@ -25,44 +26,47 @@ function Login() {
   }, [isLoggedin]);
 
   return (
-    <>
-      {isError && <Toster errorText={loginError} />}
-      <div className={style.container}>
-        <h1>Login</h1>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={submitHandler}
-        >
-          <Form className={style["login-form-wrapper"]}>
-            <div className={style["form-control"]}>
-              <label htmlFor="email">Email</label>
-              <Field id="email" name="email" />
-              <ErrorMessage
-                name="email"
-                component="p"
-                className={style["error-message"]}
-              />
-            </div>
-            <div className={style["form-control"]}>
-              <label htmlFor="password">Password</label>
-              <Field id="password" name="password" type="password" />
-              <ErrorMessage
-                name="password"
-                component="p"
-                className={style["error-message"]}
-              />
-            </div>
-            <button type="submit" className={style["btn-login"]}>
-              Login
-            </button>
-          </Form>
-        </Formik>
-        <p className={style["login-footer"]}>
-          Don't Have Account <Link to="/signup">Click Here</Link>
-        </p>
-      </div>
-    </>
+    !isLoggedin && (
+      <>
+        <Navbar />
+        {isError && <Toster errorText={loginError} />}
+        <div className={style.container}>
+          <h1>Login</h1>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={submitHandler}
+          >
+            <Form className={style["login-form-wrapper"]}>
+              <div className={style["form-control"]}>
+                <label htmlFor="email">Email</label>
+                <Field id="email" name="email" />
+                <ErrorMessage
+                  name="email"
+                  component="p"
+                  className={style["error-message"]}
+                />
+              </div>
+              <div className={style["form-control"]}>
+                <label htmlFor="password">Password</label>
+                <Field id="password" name="password" type="password" />
+                <ErrorMessage
+                  name="password"
+                  component="p"
+                  className={style["error-message"]}
+                />
+              </div>
+              <button type="submit" className={style["btn-login"]}>
+                Login
+              </button>
+            </Form>
+          </Formik>
+          <p className={style["login-footer"]}>
+            Don't Have Account <Link to="/signup">Click Here</Link>
+          </p>
+        </div>
+      </>
+    )
   );
 }
 

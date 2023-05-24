@@ -3,20 +3,14 @@ import style from "./Home.module.css";
 import profilePhoto from "../../assets/profile-photo.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { userAuthActions } from "../../store/userAuthSlice";
+import Navbar from "../Navbar/Navbar";
 function Home() {
   const isLoggedin = useSelector((state) => state.user.isLoggedIn);
   const user = useSelector((state) => state.user.currentUser);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const logoutHandler = () => {
-    dispatch(userAuthActions.logout());
-    navigate("/login");
-  };
 
   return (
     <>
+      <Navbar />
       <div className={style.container}>
         <div className={style.imageWrapper}>
           <img
