@@ -2,7 +2,7 @@
 
 This is a user management app built with React. It allows users to sign up, log in, and view their profile information. The app utilizes Redux for state management and React Router for handling routing between different pages.
 
-Live Link :
+Live Link : https://main--glowing-gumdrop-5d2f8f.netlify.app/
 
 ## Routes
 
