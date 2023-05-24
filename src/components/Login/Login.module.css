@@ -5,6 +5,12 @@
 }
 
 .login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-wrapper {
+  align-self: center;
 }
 
 .form-control {
@@ -24,5 +30,14 @@
 }
 
 .btn-login {
+  align-self: center;
   background-color: rgb(82, 82, 232);
+}
+
+.login-footer {
+  margin: 10px 0px;
+  text-align: center;
+}
+.login-footer a {
+  color: rgb(82, 82, 232);
 }
